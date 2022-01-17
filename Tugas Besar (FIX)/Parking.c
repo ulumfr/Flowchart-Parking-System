@@ -7,17 +7,17 @@
 
 void logged_user(); void logged_admin(); void delay();
 
-int compare_user, compare_plat, compare_pass, i ,j ,k ,count, curr_car;;
+int i ,j ,k ,count;
 int slot_count = 0, word_count = 0, db_person = 0;
 int acc[30];
 
 char slot['0'][99], username['0'][99], password['0'][99], plat['0'][99];
-char temp_username[99], temp_password[99], temp_plat[99], temp_input_plat[99], temp_input_user[99], temp_input_pass[99];;
-char input[99],input_plat[99], input_user[99], input_pass[99];
+char temp_username[99], temp_password[99], temp_plat[99], temp_input_plat[99], temp_input_user[99], temp_input_pass[99];
+char input[99], input_plat[99], input_user[99], input_pass[99];
 char admin[99], admin_pass[99];
 
-bool logged = false, logging = false, char_only = false, slot_empty = true;
-bool user_allow = false, user_exist = false, user_is_admin = false, pass_exist = false, car_exist=false;
+bool logging = false, char_only = false, slot_empty = true;
+bool user_exist = false, user_is_admin = false, pass_exist = false, car_exist = false;
 bool exist = false, correct = false;
 bool inputted = true, input_space = false;
 bool user_found = false, plat_found = false;
@@ -34,7 +34,7 @@ void delay(int number_of_seconds){
 }
 
 int main(){
-    fclose(read);
+
     home :
     system("cls");
     slot_count = 0;
@@ -502,7 +502,7 @@ void logged_user(){
                 printf("Inserting Car "); delay(1); printf(". "); delay(1); printf(". "); delay(1); printf(". ");
 
                 if(slot_empty == false){
-                    printf("You already Inputted your Car at slot '%i'!\n", i);
+                    printf("\n\nYou already Inputted your Car at slot '%i'!\n", i);
                     system ("pause"); goto panel;
                 }else if(slot_empty == true){
                     system("cls");

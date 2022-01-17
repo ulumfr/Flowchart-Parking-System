@@ -1,1 +1,3 @@
-Arul#1234#W 10 W
+Ulum#8989#H 10 H
+Nudin#4321#I 10 I
+Amin#1234#D 10 D
