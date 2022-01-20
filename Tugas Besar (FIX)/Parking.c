@@ -34,8 +34,8 @@ void delay(int number_of_seconds){
 }
 
 int main(){
-
     home :
+    exist=false;
     system("cls");
     slot_count = 0;
 
@@ -110,10 +110,6 @@ int main(){
         //REGISTER----------------------------------------------------------------------------------------------------------------------------
         case'1': 
             system("cls");
-            if(db_person == 20){
-                printf("Sorry there's no parking slot available");
-                system ("pause"); goto home;
-            }
 
             reg:
             system("cls");
@@ -290,6 +286,9 @@ void logged_user(){
         printf("\nInput : ");
 
         switch(getch()){
+
+//user case 1=======================================================================================================================
+
             case '1':
                 i = 1; slot_count = 0;
                 exist = false; correct = false; car_exist = false;
@@ -298,7 +297,7 @@ void logged_user(){
 
                 read = fopen("db_acc.txt", "r");
                 while(fscanf(read,"%[^#]#%[^#]#%[^\n]\n", temp_input_user, temp_input_pass, temp_input_plat) != EOF){
-                    if(strcmp(temp_username, temp_input_user) == 0 && strcmp(temp_password, temp_input_pass) == 0){
+                    if(strcmp(temp_username, temp_input_user) == 0 && strcmp(temp_password, temp_input_pass) == 0 && strcmp(temp_password, input_pass ) == 0){
                         correct = true;
                         system("cls");
                         printf("Loading"); delay(1); printf("."); delay(1); printf("."); delay(1); printf(".\n\n");
@@ -467,6 +466,8 @@ void logged_user(){
                 }
                 break;
 
+//user case 2=======================================================================================================================
+
             case '2':
                 slot_count=0;
 
@@ -486,7 +487,10 @@ void logged_user(){
                 }
 
                 slot_empty=true;
-                if(slot_count <= 20 && slot_count >= 0){
+                system("cls");
+                printf("Inserting Car "); delay(1); printf(". "); delay(1); printf(". "); delay(1); printf(". ");
+
+                if(slot_count < 20 && slot_count >= 0){
                     for (i = 1; i <= slot_count; i++){
                         if (strcmp(slot[i], temp_username) == 0){
                             slot_empty = false;
@@ -498,11 +502,9 @@ void logged_user(){
                     system("pause"); goto panel;
                 }
     
-                system("cls");
-                printf("Inserting Car "); delay(1); printf(". "); delay(1); printf(". "); delay(1); printf(". ");
 
                 if(slot_empty == false){
-                    printf("\n\nYou already Inputted your Car at slot '%i'!\n", i);
+                    printf("You already Inputted your Car at slot '%i'!\n", i);
                     system ("pause"); goto panel;
                 }else if(slot_empty == true){
                     system("cls");
@@ -525,6 +527,9 @@ void logged_user(){
                 }
                 slot_empty = true;
                 break;
+
+//user case 3=======================================================================================================================
+
 
             case '3':
                 slot_empty = true; slot_count = 0;
@@ -565,6 +570,9 @@ void logged_user(){
                     printf("Something went wrong"); goto panel;
                 }
                 break;
+
+//user case 4=======================================================================================================================
+
 
             case '4':
                 slot_empty = true; slot_count = 0;
@@ -609,6 +617,8 @@ void logged_user(){
                     system("pause"); goto panel;
                 }
                 break;
+
+//user case 5=======================================================================================================================
 
             case '5':
                 system("cls");
