@@ -1,10 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <string.h>
-#include <conio.h>
-#include <time.h>
-
 /*============================================
      === School Project ===                 ||
    Automatic Parking System                 ||
@@ -15,6 +8,13 @@
  * 4. Muhammad Gus Nadir_481                ||
                                             ||
 ============================================*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#include <conio.h>
+#include <time.h>
 
 void logged_user(); void logged_admin(); void delay();
 
